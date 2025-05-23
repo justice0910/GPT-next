@@ -1,3 +1,31 @@
+# next-GPT
+
+This is a [Next.js](https://nextjs.org/) project that uses [GPT](https://openai.com/blog/openai-api/) to generate text, which is designed with new UI/UX in mind.
+
+## Introduction
+
+This project is a learning experience for me to learn Nextjs Pages Router rather than Nextjs App Router.
+I am also using this project to learn how to build a project with Nextjs and Tailwindcss.
+Additionally, Typescript has been incorporated into the entire project.
+
+
+## Features
+
+- [ ] Website UI/UX accomplished with Tailwindcss
+  - [ ] Website components (Menu, Chat, etc.) 
+  - [ ] Dark mode and Light mode
+  - [ ] Mobile support
+  - [ ] i18n Internationalization
+
+- [ ] GPT-3 API integration
+
+- [ ] Login authentication
+
+
+
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
