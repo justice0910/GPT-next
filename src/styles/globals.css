@@ -18,3 +18,26 @@ body {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-rgb));
 }
+
+/* scrollable */
+.scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+/* 设置特定元素的滚动条背景颜色 */
+.scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 设置特定元素的滚动条滑块颜色 */
+.scrollable::-webkit-scrollbar-thumb {
+  background: #f6f6f7;
+  border-radius: 4px;
+}
+
+/* 当鼠标悬停在特定元素的滚动条滑块上时，改变滑块颜色 */
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background: #e2e4e5;
+}
+
