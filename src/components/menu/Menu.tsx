@@ -1,10 +1,13 @@
 import {useState} from "react"
 import Divide from "@/components/utils/Divide"
-import ChatBox from "@/components/menu/ChatBox";
+import ChatBox from "@/components/menu/ChatBox"
+import MenuClear from "@/components/menu/MenuClear"
+import MenuKey from "@/components/menu/MenuKey"
+import MenuSettings from "@/components/menu/MenuSettings"
 
 
 export interface IChat {
-  id: number;
+  id: number
 }
 
 
@@ -41,9 +44,9 @@ function Menu() {
       {/*Button*/}
       <Divide/>
       <div className={'mt-4'}>
-        <button className={'p-2 rounded-lg mb-2 w-full text-left text-white hover:bg-menuColors-700'}>Clear Conversations</button>
-        <button className={'p-2 rounded-lg mb-2 w-full text-left text-white hover:bg-menuColors-700'}>OpenAI key</button>
-        <button className={'p-2 rounded-lg mb-2 w-full text-left text-white hover:bg-menuColors-700'}>Settings</button>
+        <MenuClear/>
+        <MenuKey/>
+        <MenuSettings/>
       </div>
     </div>
   )

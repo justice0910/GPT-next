@@ -4,9 +4,9 @@ import {IChat} from "@/components/menu/Menu"
 
 
 interface IProps {
-  id: number;
-  chatsArr: IChat[];
-  setChatsArr: Dispatch<SetStateAction<IChat[]>>;
+  id: number
+  chatsArr: IChat[]
+  setChatsArr: Dispatch<SetStateAction<IChat[]>>
 }
 
 
