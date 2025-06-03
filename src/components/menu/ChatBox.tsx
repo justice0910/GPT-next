@@ -2,20 +2,28 @@ import Image from "next/image"
 import {ChangeEvent, Dispatch, SetStateAction, useState} from "react"
 import {IChat} from "@/components/menu/Menu"
 
-
 interface IProps {
   id: number
+  message: string
   chatsArr: IChat[]
   setChatsArr: Dispatch<SetStateAction<IChat[]>>
 }
 
-
 function ChatBox(props: IProps) {
-  const {id, chatsArr, setChatsArr} = props
-  const [chatName, setChatName] = useState<string>('new Chat')
-  const [inputValue, setInputValue] = useState<string>(chatName)
+  const {id, message, chatsArr, setChatsArr} = props
+  const [inputValue, setInputValue] = useState<string>(message)
   const [isEdit, setIsEdit] = useState<boolean>(false)
 
+  const handlerCheckClick = () => {
+    setIsEdit(!isEdit)
+    const updatedChats: IChat[] = chatsArr.map((chat: IChat) => {
+      if (chat.id === id) {
+        return {...chat, message: inputValue}
+      }
+      return chat
+    })
+    setChatsArr(updatedChats)
+  }
 
   return (
     <div className={'flex flex-row justify-between relative mt-2 p-2 text-white rounded-lg hover:bg-menuColors-700 hover:cursor-pointer'}>
@@ -37,7 +45,7 @@ function ChatBox(props: IProps) {
               className={'w-10/12 border p bg-transparent'}
             />
           ) : (
-            <p>{chatName.slice(0, 18)}</p>
+            <p>{message.slice(0, 18)}</p>
           )}
         </div>
       </div>
@@ -51,10 +59,7 @@ function ChatBox(props: IProps) {
             width={16}
             height={16}
             className={'mr-2 cursor-pointer'}
-            onClick={() => {
-              setIsEdit(!isEdit)
-              setChatName(inputValue)
-            }}
+            onClick={handlerCheckClick}
           />
           <Image
             src={'/x.svg'}
@@ -63,8 +68,7 @@ function ChatBox(props: IProps) {
             height={16}
             className={'mr-2 cursor-pointer'}
             onClick={() => {
-              setChatName(chatName)
-              setInputValue(chatName)
+              setInputValue(message)
               setIsEdit(!isEdit)
             }}
           />
@@ -86,7 +90,7 @@ function ChatBox(props: IProps) {
             height={16}
             className={'mr-2 cursor-pointer'}
             onClick={() => {
-              const newChatsArr = chatsArr.filter(chat => chat.id !== id)
+              const newChatsArr: IChat[] = chatsArr.filter((chat: IChat) => chat.id !== id)
               setChatsArr(newChatsArr)
             }}
           />

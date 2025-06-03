@@ -1,8 +1,6 @@
 import Image from "next/image"
 
 function ChatInput() {
-
-
   return (
     <div className={'relative border-2 border-gray-300 p-1 rounded-lg '}>
       <textarea
